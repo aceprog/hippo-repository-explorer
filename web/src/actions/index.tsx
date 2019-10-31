@@ -28,7 +28,7 @@ export const showRepos = (): ShowRepos => ({
 
 export const getRepos = () => {
   return function(dispatch: any) {
-    fetch("http://localhost:4000/repos")
+    fetch("http://localhost:4100/repos")
     .then(response => response.json())
     .then(json => {
       dispatch({ type: DATA_LOADED, payload: json });

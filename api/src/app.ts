@@ -11,7 +11,7 @@ const corsOptions = {
 
 export const app = express();
 
-// Routes
+// Routes & Middlware
 //app.use('/repos', cors(corsOptions), repos);
 app.use(cors(corsOptions));
 app.use(repos);

@@ -2,16 +2,18 @@ version: "3.3"
 
 services:
 
-  web:
-    build:
-      context: ./web
-      dockerfile: Dockerfile
-    ports:
-      - 3100:3000/tcp
-
   api:
     build:
       context: ./api
       dockerfile: Dockerfile
     ports:
       - 4100:4000/tcp
+
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    ports:
+      - 3100:3000/tcp
+    links:
+      - api:api
